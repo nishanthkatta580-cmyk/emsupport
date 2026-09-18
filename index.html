@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emotional Support — Professional Mental Health & Care Services</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Compassionate mental health and emotional support services tailored for individuals, partners, and clinicians. Access resources, self-help tools, and secure booking.">
+  <meta name="keywords" content="emotional support, mental health, therapy, self-help resources, mood tracker, breathing exercises, clinical consulting">
+  <meta property="og:title" content="Emotional Support — Professional Mental Health & Care Services">
+  <meta property="og:description" content="Compassionate mental health services and self-help tools. Book a consultation or explore our articles and tools.">
+  <meta property="og:type" content="website">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/layouts.css">
+  <link rel="stylesheet" href="./styles/components.css">
+</head>
+<body>
+  <!-- Skip Link for Keyboard Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Crisis Banner -->
+  <div class="crisis-banner" role="complementary" aria-label="Crisis Support Information">
+    <div class="crisis-content">
+      <span class="crisis-icon" aria-hidden="true">💡</span>
+      <p class="crisis-text">
+        <strong>In Distress?</strong> For immediate emotional support, call India's 24/7 National helplines: <strong>Tele-MANAS (14416 / 1800-891-4416)</strong> or <strong>KIRAN (1800-599-0019)</strong>.
+      </p>
+      <button class="close-crisis" aria-label="Close crisis alert banner">&times;</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <a href="#/home" class="logo-group" aria-label="Emotional Support Home">
+        <svg class="logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Green Circle Border & Fill -->
+          <circle cx="16" cy="16" r="14" fill="var(--primary-glow)" stroke="var(--primary)" stroke-width="2"/>
+          <!-- Blooming Pink Lotus Petals (Fully Open) -->
+          <path d="M16 15C10 17 8 23 16 25C24 23 22 17 16 15Z" fill="hsl(330, 85%, 80%)" style="transform-origin: 16px 25px; transform: rotate(-50deg) scale(1.1);"/>
+          <path d="M16 15C10 17 8 23 16 25C24 23 22 17 16 15Z" fill="hsl(330, 85%, 80%)" style="transform-origin: 16px 25px; transform: rotate(50deg) scale(1.1);"/>
+          <path d="M16 11C11 13 9 22 16 25C13 18 14 14 16 11Z" fill="hsl(330, 85%, 72%)" style="transform-origin: 16px 25px; transform: rotate(-25deg);" />
+          <path d="M16 11C21 13 23 22 16 25C19 18 18 14 16 11Z" fill="hsl(330, 85%, 72%)" style="transform-origin: 16px 25px; transform: rotate(25deg);" />
+          <path d="M16 7C14.5 12 14 20 16 25C18 20 17.5 12 16 7Z" fill="hsl(330, 90%, 65%)"/>
+          <path d="M10 23C12 25 20 25 22 23C16 24 16 24 10 23Z" fill="var(--primary)"/>
+        </svg>
+        <span class="logo-text">Emotional <span class="logo-sub">Support</span></span>
+      </a>
+
+      <!-- Navigation -->
+      <button class="mobile-nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle Navigation Menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      
+      <nav id="primary-nav" class="nav-menu" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#/home" class="nav-link">Home</a></li>
+          <li><a href="#/services" class="nav-link">Services</a></li>
+          <li><a href="#/about" class="nav-link">About</a></li>
+          <li><a href="#/resources" class="nav-link">Resources</a></li>
+          <li><a href="#/faq" class="nav-link">FAQ</a></li>
+          <li><a href="#/contact" class="nav-link btn-contact-nav">Get Support</a></li>
+        </ul>
+      </nav>
+
+      <!-- Accessibility / Control Utilities -->
+      <div class="theme-switch-container">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch to Dark Mode">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" class="app-main" tabindex="-1">
+    <!-- View content is injected here by router.js -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-branding">
+        <div class="footer-logo">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14" fill="var(--primary-glow)" stroke="var(--primary)" stroke-width="2"/>
+            <!-- Blooming Pink Lotus Petals (Fully Open) -->
+            <path d="M16 15C10 17 8 23 16 25C24 23 22 17 16 15Z" fill="hsl(330, 85%, 80%)" style="transform-origin: 16px 25px; transform: rotate(-50deg) scale(1.1);"/>
+            <path d="M16 15C10 17 8 23 16 25C24 23 22 17 16 15Z" fill="hsl(330, 85%, 80%)" style="transform-origin: 16px 25px; transform: rotate(50deg) scale(1.1);"/>
+            <path d="M16 11C11 13 9 22 16 25C13 18 14 14 16 11Z" fill="hsl(330, 85%, 72%)" style="transform-origin: 16px 25px; transform: rotate(-25deg);" />
+            <path d="M16 11C21 13 23 22 16 25C19 18 18 14 16 11Z" fill="hsl(330, 85%, 72%)" style="transform-origin: 16px 25px; transform: rotate(25deg);" />
+            <path d="M16 7C14.5 12 14 20 16 25C18 20 17.5 12 16 7Z" fill="hsl(330, 90%, 65%)"/>
+            <path d="M10 23C12 25 20 25 22 23C16 24 16 24 10 23Z" fill="var(--primary)"/>
+          </svg>
+          <span>Emotional Support</span>
+        </div>
+        <p class="footer-desc" style="font-style: italic; font-weight: 600; color: var(--primary); margin-bottom: 8px;">"A better change starts here"</p>
+        <p class="footer-desc">Professional and compassionate emotional support resources, mental health tools, and therapeutic consulting.</p>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="#/home" class="btn btn-secondary" style="text-align:center;">Home</a>
+            <a href="#/services" class="btn btn-secondary" style="text-align:center;">Services</a>
+            <a href="#/about" class="btn btn-secondary" style="text-align:center;">About Us</a>
+            <a href="#/resources" class="btn btn-secondary" style="text-align:center;">Resources</a>
+            <a href="#/faq" class="btn btn-secondary" style="text-align:center;">FAQ</a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Legal & Inquiries</h4>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="#/about" class="btn btn-secondary privacy-link-trigger" style="text-align:center;">Client Privacy Statement</a>
+            <a href="#/contact" class="btn btn-secondary" style="text-align:center;">Professional Inquiries</a>
+            <a href="#/contact" class="btn btn-primary" style="text-align:center;">Book Consultation</a>
+            <a href="#/dashboard" class="btn btn-accent" style="text-align:center;">Clinician Portal</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Emotional Support. All rights reserved.</p>
+        <p class="footer-disclaimer">
+          <strong>Disclaimer:</strong> This website provides mental health tools and informational consulting resources. It is not a clinical treatment center, psychiatric hospital, or a replacement for medical emergency assistance. If you are in immediate danger, please contact local emergency responders.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Nav Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <ul class="bottom-nav-list">
+      <li class="bottom-nav-item">
+        <a href="#/home" class="bottom-nav-link">
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="bottom-nav-item">
+        <a href="#/services" class="bottom-nav-link">
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Services</span>
+        </a>
+      </li>
+      <li class="bottom-nav-item">
+        <a href="#/resources" class="bottom-nav-link">
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <span>Resources</span>
+        </a>
+      </li>
+      <li class="bottom-nav-item">
+        <a href="#/contact" class="bottom-nav-link">
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span>Get Support</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Floating Help Button -->
+  <a href="#/contact" class="floating-help-btn" aria-label="Book quick consultation">
+    <svg class="floating-help-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

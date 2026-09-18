@@ -1,0 +1,566 @@
+/* ==========================================================================
+   Emotional Support — Persistent Layouts (Header, Nav, Footer, Crisis Alert)
+   ========================================================================== */
+
+/* 1. Crisis Alert Banner */
+.crisis-banner {
+  background-color: hsl(6, 68%, 46%); /* Crimson red, but readable contrast */
+  color: var(--text-light);
+  padding: 10px 16px;
+  position: relative;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+  transition: margin-top var(--transition-normal) ease;
+}
+
+.crisis-banner[hidden] {
+  display: none;
+}
+
+.crisis-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 12px;
+  position: relative;
+  padding-right: 32px; /* Space for close button */
+}
+
+.crisis-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.crisis-text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.crisis-text strong {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.close-crisis {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  opacity: 0.85;
+  transition: opacity var(--transition-fast);
+}
+
+.close-crisis:hover {
+  opacity: 1;
+}
+
+/* 2. Header & Navigation */
+.app-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+
+/* Logo Brand */
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  flex-shrink: 0;
+  transition: transform var(--transition-fast) ease;
+}
+
+.logo-group:hover .logo-icon {
+  transform: rotate(-10deg) scale(1.05);
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.logo-sub {
+  color: var(--primary);
+  font-weight: 400;
+}
+
+/* Nav Menu */
+.nav-menu {
+  margin-left: auto;
+  margin-right: 32px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  position: relative;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-main);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--transition-fast) ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.btn-contact-nav {
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 8px 20px;
+  border-radius: var(--radius-round);
+  font-weight: 600;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-contact-nav:hover {
+  background-color: var(--primary-light);
+  color: var(--text-light);
+}
+
+.btn-contact-nav::after {
+  display: none; /* No line under button */
+}
+
+/* Theme Switch UI */
+.theme-switch-container {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  border-radius: var(--radius-round);
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: var(--bg-light);
+}
+
+/* Toggle icon display based on theme state */
+.sun-icon {
+  display: none;
+}
+.moon-icon {
+  display: block;
+}
+
+[data-theme="dark"] .sun-icon {
+  display: block;
+}
+[data-theme="dark"] .moon-icon {
+  display: none;
+}
+
+/* Mobile Nav Toggle Icon */
+.mobile-nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+/* Hamburger lines styling */
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-main);
+  position: relative;
+  transition: background-color var(--transition-fast);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: transform var(--transition-fast), top var(--transition-fast);
+}
+
+.hamburger::before {
+  top: -6px;
+}
+.hamburger::after {
+  top: 6px;
+}
+
+/* Hamburger active transformation */
+.mobile-nav-toggle[aria-expanded="true"] .hamburger {
+  background-color: transparent;
+}
+.mobile-nav-toggle[aria-expanded="true"] .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.mobile-nav-toggle[aria-expanded="true"] .hamburger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* 3. Footer Layout */
+.app-footer {
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--border-color);
+  padding: 64px 0 32px 0;
+  margin-top: auto;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+
+.footer-branding {
+  max-width: 420px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.footer-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.footer-links-col h4 {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+  font-family: var(--font-display);
+}
+
+.footer-links-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-col a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-links-col a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--border-color);
+  padding-top: 32px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-copyright {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer-disclaimer {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  background-color: var(--bg-main);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--primary);
+  transition: background-color var(--transition-normal);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-branding {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Offset body height to make space for the bottom nav bar */
+  body {
+    padding-bottom: 80px;
+  }
+
+  /* Navigation Menu for mobile overlay drawer */
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    margin: 0;
+    transition: right var(--transition-normal) ease;
+    border-left: 1px solid var(--border-color);
+  }
+
+  .nav-menu.open {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 40px;
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+  }
+  
+  .btn-contact-nav {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .theme-switch-container {
+    margin-right: 16px;
+  }
+
+  /* Show mobile bottom tab bar */
+  .mobile-bottom-nav {
+    display: block;
+  }
+
+  /* Reposition floating help button to avoid overlap */
+  .floating-help-btn {
+    bottom: 88px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .header-container {
+    padding: 12px 16px;
+  }
+  .logo-text {
+    font-size: 1.15rem;
+  }
+}
+
+/* ==========================================================================
+   4. Mobile Bottom Navigation & Floating Action Button Styles
+   ========================================================================== */
+
+/* Mobile bottom nav container (Hidden on desktop) */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-top: 1px solid var(--border-color);
+  z-index: 999;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.05);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+}
+
+.bottom-nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bottom-nav-item {
+  flex: 1;
+  text-align: center;
+}
+
+.bottom-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  gap: 4px;
+  height: 100%;
+  padding: 6px 0;
+  transition: color var(--transition-fast);
+}
+
+.bottom-nav-link:hover,
+.bottom-nav-link.active {
+  color: var(--primary);
+}
+
+.bottom-nav-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-fast) ease;
+}
+
+.bottom-nav-link.active .bottom-nav-icon {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Floating Help Button */
+.floating-help-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-round);
+  background-color: var(--accent-terracotta);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg), 0 0 0 0 var(--primary-glow);
+  z-index: 998;
+  cursor: pointer;
+  border: none;
+  transition: transform var(--transition-fast) ease, background-color var(--transition-fast), bottom var(--transition-normal) ease;
+}
+
+.floating-help-btn:hover {
+  background-color: var(--accent-terracotta-hover);
+  transform: scale(1.08);
+}
+
+.floating-help-btn:active {
+  transform: scale(0.95);
+}
+
+.floating-help-icon {
+  width: 24px;
+  height: 24px;
+  animation: pulse-icon 2.5s infinite;
+}
+
+@keyframes pulse-icon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
